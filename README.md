@@ -1,6 +1,15 @@
-# Workshop Repo — Consultant Insights Dashboard
+# AWS Vibe Code — Consultant Insights Dashboard
 
-This repo is intentionally small so you can live-build it in ~3 hours.
+An AWS cost analysis dashboard demonstrating TDD principles and modern React development.
+
+## Tech Stack
+
+- **Next.js 15.5** - React framework with App Router
+- **React 19** - Latest React with improved performance
+- **TypeScript 5.7** - Type-safe development
+- **Cloudscape Design System** - AWS-native UI components
+- **MUI X Charts** - Data visualization
+- **Vitest 4** - Fast unit testing
 
 ## What it demonstrates
 
@@ -23,6 +32,12 @@ npm run dev
 
 Open: http://localhost:3000
 
+## Development
+
+- **Build**: `npm run build`
+- **Test**: `npm test` or `npm run test:watch`
+- **Lint**: `npm run lint`
+
 ## Where to code during the workshop
 
 - Domain (tests first):
@@ -39,3 +54,7 @@ Open: http://localhost:3000
 2. Add a test in `metrics.test.ts`.
 3. Implement the smallest code change to make tests green.
 4. Wire the result into the UI.
+
+## License
+
+MIT License - see [LICENSE](LICENSE) for details.

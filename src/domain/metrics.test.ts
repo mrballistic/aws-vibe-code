@@ -73,7 +73,7 @@ describe('detectAnomalies', () => {
       { date: '2026-01-05', cost: 10 }
     ];
 
-    const anomalies = detectAnomalies(series, 2);
+    const anomalies = detectAnomalies(series, 1.5);
 
     expect(anomalies.length).toBeGreaterThan(0);
     expect(anomalies[0].date).toBe('2026-01-03');

@@ -350,8 +350,10 @@ export default function Dashboard() {
               </Box>
 
               <Container header={<Header variant="h3">Markdown summary (for pasting into an email/doc)</Header>}>
-                <Box fontFamily="monospace" fontSize="body-s" whiteSpace="pre-wrap">
-                  {model.summaryMarkdown}
+                <Box fontSize="body-s">
+                  <pre style={{ fontFamily: 'monospace', whiteSpace: 'pre-wrap', margin: 0 }}>
+                    {model.summaryMarkdown}
+                  </pre>
                 </Box>
               </Container>
             </SpaceBetween>
