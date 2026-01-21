@@ -20,7 +20,7 @@ export default function InsightsPanel({ insights }: InsightsPanelProps) {
     return (
       <Container
         header={
-          <Header variant="h2">Today's Actions</Header>
+          <Header variant="h2">Today&apos;s Actions</Header>
         }
       >
         <Box textAlign="center" color="text-status-inactive" padding="xxl">
@@ -34,7 +34,7 @@ export default function InsightsPanel({ insights }: InsightsPanelProps) {
     <Container
       header={
         <Header variant="h2" counter={`(${insights.length})`}>
-          Today's Actions
+          Today&apos;s Actions
         </Header>
       }
     >

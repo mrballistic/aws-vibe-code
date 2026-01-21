@@ -1,5 +1,5 @@
 import { describe, it, expect } from "vitest";
-import { generateInsights } from "./generateInsights";
+import { generateInsights, type Insight } from "./generateInsights";
 import { Driver, Anomaly } from "./types";
 
 describe("generateInsights", () => {
@@ -36,7 +36,7 @@ describe("generateInsights", () => {
       totalDelta: -4450,
     });
 
-    const declineInsight = insights.find(i => i.type === "top_driver_decline");
+    const declineInsight = insights.find((i: Insight) => i.type === "top_driver_decline");
     expect(declineInsight).toBeDefined();
     expect(declineInsight?.text).toContain("Lambda");
     expect(declineInsight?.text).toContain("$4,500");
@@ -54,7 +54,7 @@ describe("generateInsights", () => {
       totalDelta: 0,
     });
 
-    const spikeInsight = insights.find(i => i.type === "anomaly_spike");
+    const spikeInsight = insights.find((i: Insight) => i.type === "anomaly_spike");
     expect(spikeInsight).toBeDefined();
     expect(spikeInsight?.text).toContain("2026-01-15");
     expect(spikeInsight?.text).toContain("spike");
@@ -72,7 +72,7 @@ describe("generateInsights", () => {
       totalDelta: 0,
     });
 
-    const dipInsight = insights.find(i => i.type === "anomaly_dip");
+    const dipInsight = insights.find((i: Insight) => i.type === "anomaly_dip");
     expect(dipInsight).toBeDefined();
     expect(dipInsight?.text).toContain("2026-01-08");
     expect(dipInsight?.text).toContain("dip");
@@ -96,8 +96,8 @@ describe("generateInsights", () => {
     });
 
     expect(insights.length).toBeGreaterThanOrEqual(2);
-    expect(insights.some(i => i.type === "top_driver_growth")).toBe(true);
-    expect(insights.some(i => i.type === "anomaly_spike")).toBe(true);
+    expect(insights.some((i: Insight) => i.type === "top_driver_growth")).toBe(true);
+    expect(insights.some((i: Insight) => i.type === "anomaly_spike")).toBe(true);
   });
 
   it("prioritizes insights by importance", () => {
@@ -146,7 +146,7 @@ describe("generateInsights", () => {
       totalDelta: 11345.67,
     });
 
-    const growthInsight = insights.find(i => i.type === "top_driver_growth");
+    const growthInsight = insights.find((i: Insight) => i.type === "top_driver_growth");
     expect(growthInsight?.text).toMatch(/\$[\d,]+/); // Should have dollar formatting
   });
 });

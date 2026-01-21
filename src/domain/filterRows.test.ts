@@ -22,7 +22,7 @@ describe("filterRows", () => {
     });
     
     expect(result).toHaveLength(3);
-    expect(result.map(r => r.date)).toEqual([
+    expect(result.map((r: SpendRow) => r.date)).toEqual([
       "2026-01-02",
       "2026-01-03",
       "2026-01-04",
@@ -35,7 +35,7 @@ describe("filterRows", () => {
     });
     
     expect(result).toHaveLength(2);
-    expect(result.every(r => r.clientId === "C01")).toBe(true);
+    expect(result.every((r: SpendRow) => r.clientId === "C01")).toBe(true);
   });
 
   it("filters by multiple clients", () => {
@@ -44,7 +44,7 @@ describe("filterRows", () => {
     });
     
     expect(result).toHaveLength(3);
-    expect(result.map(r => r.clientId)).toEqual(["C01", "C01", "C03"]);
+    expect(result.map((r: SpendRow) => r.clientId)).toEqual(["C01", "C01", "C03"]);
   });
 
   it("filters by single service", () => {
@@ -53,7 +53,7 @@ describe("filterRows", () => {
     });
     
     expect(result).toHaveLength(2);
-    expect(result.every(r => r.awsService === "EC2")).toBe(true);
+    expect(result.every((r: SpendRow) => r.awsService === "EC2")).toBe(true);
   });
 
   it("filters by multiple services", () => {
@@ -62,7 +62,7 @@ describe("filterRows", () => {
     });
     
     expect(result).toHaveLength(3);
-    expect(result.map(r => r.awsService).sort()).toEqual(["Lambda", "S3", "S3"]);
+    expect(result.map((r: SpendRow) => r.awsService).sort()).toEqual(["Lambda", "S3", "S3"]);
   });
 
   it("combines multiple filters (AND logic)", () => {
