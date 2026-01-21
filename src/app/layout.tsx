@@ -5,14 +5,14 @@ import type { Metadata } from 'next';
 import type { ReactNode } from 'react';
 
 export const metadata: Metadata = {
-  title: 'Consultant Insights Dashboard (Workshop)',
-  description: 'PRD + TDD vibe coding workshop demo'
+  title: 'AWS Usage Insights Dashboard - Wellness Domain',
+  description: 'Seller dashboard for AWS customer usage insights'
 };
 
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <body suppressHydrationWarning>{children}</body>
     </html>
   );
 }
