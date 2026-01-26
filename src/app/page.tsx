@@ -112,7 +112,7 @@ export default function Page() {
         identity={{
           href: '#',
           title: 'AWS Usage Insights',
-          logo: { src: '/aws-logo.svg', alt: 'AWS' }
+          logo: { src: '/aws-vibe-code/aws-logo.svg', alt: 'AWS' }
         }}
         utilities={[
           {
