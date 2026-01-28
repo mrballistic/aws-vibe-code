@@ -1,15 +1,15 @@
 # AWS Vibe Code — Consultant Insights Dashboard
 
-An AWS cost analysis dashboard demonstrating TDD principles and modern React development.
+An AWS usage insights dashboard demonstrating TDD principles and modern React development.
 
 ## Tech Stack
 
-- **Next.js 15.5** - React framework with App Router
+- **Next.js 16.1** - React framework with App Router
 - **React 19** - Latest React with improved performance
 - **TypeScript 5.7** - Type-safe development
 - **Cloudscape Design System** - AWS-native UI components
 - **MUI X Charts** - Data visualization
-- **Vitest 4** - Fast unit testing
+- **Vitest 4** - Fast unit testing + coverage
 
 ## What it demonstrates
 
@@ -26,7 +26,7 @@ An AWS cost analysis dashboard demonstrating TDD principles and modern React dev
 
 ```bash
 npm install
-npm test
+npm test -- --coverage
 npm run dev
 ```
 
@@ -36,14 +36,19 @@ Open: http://localhost:3000
 
 - **Build**: `npm run build`
 - **Test**: `npm test` or `npm run test:watch`
+- **Coverage**: `npm test -- --coverage`
 - **Lint**: `npm run lint`
 
 ## Where to code during the workshop
 
 - Domain (tests first):
-  - `src/domain/generateSyntheticCur.ts`
-  - `src/domain/metrics.ts`
-  - `src/domain/metrics.test.ts`
+  - `src/domain/buildDashboardModel.ts`
+  - `src/domain/computeQoQWindows.ts`
+  - `src/domain/filterRows.ts`
+  - `src/domain/rankDrivers.ts`
+  - `src/domain/detectAnomalies.ts`
+  - `src/domain/generateInsights.ts`
+  - `src/domain/*.test.ts`
 - UI wiring:
   - `src/app/page.tsx`
   - `src/components/*`
@@ -51,7 +56,7 @@ Open: http://localhost:3000
 ## Common workshop move
 
 1. Add an acceptance criterion to your PRD.
-2. Add a test in `metrics.test.ts`.
+2. Add a test in `src/domain/*.test.ts`.
 3. Implement the smallest code change to make tests green.
 4. Wire the result into the UI.
 
